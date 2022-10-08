@@ -1,0 +1,31 @@
+﻿<Properties StartupConfiguration="{DF20AF5E-F415-4F3F-8BB5-B0DFEE1DB609}|Default">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.codeFirst PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Data/Migrations/ProvinceNewDB/20221008050013_M1.cs">
+    <Files>
+      <File FileName="Data/SeedData.cs" Line="54" Column="50" />
+      <File FileName="appsettings.json" Line="13" Column="2" />
+      <File FileName="Data/ApplicationDbContext.cs" Line="28" Column="1" />
+      <File FileName="Data/Migrations/ProvinceNewDB/20221008050013_M1.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="codeFirst" expanded="True">
+            <Node name="codeFirst" expanded="True">
+              <Node name="Views" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+</Properties>
