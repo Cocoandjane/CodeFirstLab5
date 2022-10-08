@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace codeFirst.Controllers
 {
-    [Authorize]
+  
     public class CityController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -23,7 +23,7 @@ namespace codeFirst.Controllers
         }
 
         // GET: City
-        [AllowAnonymous]
+       
         public async Task<IActionResult> Index()
         {
             var applicationDbContext = _context.cities.Include(c => c.Province);

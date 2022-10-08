@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace codeFirst.Controllers
 {
-    [Authorize]
+
     public class ProvinceController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -22,7 +22,7 @@ namespace codeFirst.Controllers
         }
 
         // GET: Province
-        [AllowAnonymous]
+      
         public async Task<IActionResult> Index()
         {
               return _context.Provinces != null ? 
