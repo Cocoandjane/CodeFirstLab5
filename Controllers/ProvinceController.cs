@@ -22,12 +22,12 @@ namespace codeFirst.Controllers
         }
 
         // GET: Province
-      
+
         public async Task<IActionResult> Index()
         {
-              return _context.Provinces != null ? 
-                          View(await _context.Provinces.ToListAsync()) :
-                          Problem("Entity set 'ApplicationDbContext.Provinces'  is null.");
+            return _context.Provinces != null ?
+                        View(await _context.Provinces.ToListAsync()) :
+                        Problem("Entity set 'ApplicationDbContext.Provinces'  is null.");
         }
 
         // GET: Province/Details/5
@@ -61,13 +61,10 @@ namespace codeFirst.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("ProvinceCode,ProvinceName")] Province province)
         {
-            if (ModelState.IsValid)
-            {
-                _context.Add(province);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(province);
+            _context.Add(province);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+
         }
 
         // GET: Province/Edit/5
@@ -98,27 +95,24 @@ namespace codeFirst.Controllers
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+
+            try
             {
-                try
-                {
-                    _context.Update(province);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!ProvinceExists(province.ProvinceCode))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
+                _context.Update(province);
+                await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(province);
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!ProvinceExists(province.ProvinceCode))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
         }
 
         // GET: Province/Delete/5
@@ -153,14 +147,14 @@ namespace codeFirst.Controllers
             {
                 _context.Provinces.Remove(province);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool ProvinceExists(string id)
         {
-          return (_context.Provinces?.Any(e => e.ProvinceCode == id)).GetValueOrDefault();
+            return (_context.Provinces?.Any(e => e.ProvinceCode == id)).GetValueOrDefault();
         }
     }
 }

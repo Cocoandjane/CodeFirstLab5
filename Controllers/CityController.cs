@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace codeFirst.Controllers
 {
-  
+
     public class CityController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -23,7 +23,7 @@ namespace codeFirst.Controllers
         }
 
         // GET: City
-       
+
         public async Task<IActionResult> Index()
         {
             var applicationDbContext = _context.cities.Include(c => c.Province);
@@ -63,14 +63,13 @@ namespace codeFirst.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("CityId,CityName,Population,ProvinceCode")] City city)
         {
-            if (ModelState.IsValid)
-            {
-                _context.Add(city);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            ViewData["ProvinceCode"] = new SelectList(_context.Provinces, "ProvinceCode", "ProvinceCode", city.ProvinceCode);
-            return View(city);
+
+            _context.Add(city);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+
+            // ViewData["ProvinceCode"] = new SelectList(_context.Provinces, "ProvinceCode", "ProvinceCode", city.ProvinceCode);
+            // return View(city);
         }
 
         // GET: City/Edit/5
@@ -102,12 +101,12 @@ namespace codeFirst.Controllers
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
-            {
+            
                 try
                 {
                     _context.Update(city);
                     await _context.SaveChangesAsync();
+                     return RedirectToAction(nameof(Index));
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -120,10 +119,10 @@ namespace codeFirst.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
-            }
-            ViewData["ProvinceCode"] = new SelectList(_context.Provinces, "ProvinceCode", "ProvinceCode", city.ProvinceCode);
-            return View(city);
+               
+            
+            // ViewData["ProvinceCode"] = new SelectList(_context.Provinces, "ProvinceCode", "ProvinceCode", city.ProvinceCode);
+            // return View(city);
         }
 
         // GET: City/Delete/5
@@ -159,14 +158,14 @@ namespace codeFirst.Controllers
             {
                 _context.cities.Remove(city);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool CityExists(int id)
         {
-          return (_context.cities?.Any(e => e.CityId == id)).GetValueOrDefault();
+            return (_context.cities?.Any(e => e.CityId == id)).GetValueOrDefault();
         }
     }
 }

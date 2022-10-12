@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ENd3s9So/sIMCC9b8DtlCsCSK1gbmjwsh6gVbSAuByEzRNRWTtnYWI+kdJZVN8JQUZj4l3fzKpS8tIdbbQBKBg==",
+  "dgSpecHash": "t/MfG6EAuW7w6X+sNIJzlJ3+NQ1sNDjFN9dcYscHqpyl0g1MCPELHT6276/RusVO36VDKRNlwIxDdWXBRwuvvQ==",
   "success": true,
-  "projectFilePath": "/Users/jane/Desktop/CodeFirst/codeFirst.csproj",
+  "projectFilePath": "/Users/jane/Desktop/term3/csharp/week5/CodeFirst/codeFirst.csproj",
   "expectedPackageFiles": [
     "/Users/jane/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
     "/Users/jane/.nuget/packages/messagepack/2.1.152/messagepack.2.1.152.nupkg.sha512",
