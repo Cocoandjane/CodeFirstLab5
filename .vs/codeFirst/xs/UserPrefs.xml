@@ -5,19 +5,14 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="appsettings.json">
     <Files>
       <File FileName="appsettings.json" Line="13" Column="2" />
-      <File FileName="Controllers/CityController.cs" Line="15" Column="3" />
+      <File FileName="Controllers/CityController.cs" Line="15" Column="1" />
       <File FileName="Controllers/ProvinceController.cs" Line="31" Column="10" />
       <File FileName="appsettings.Development.json" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="codeFirst" expanded="True">
-            <Node name="codeFirst" expanded="True">
-              <Node name="Controllers" expanded="True" />
-              <Node name="appsettings.json" expanded="True" selected="True" />
-            </Node>
-          </Node>
+          <Node name="codeFirst" expanded="True" />
         </State>
       </Pad>
       <Pad Id="MonoDevelop.Debugger.WatchPad">
